@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:secret_note/page/new_note_page.dart';
 import 'package:secret_note/widgets/drawer_nav.dart';
-import 'package:secret_note/widgets/ui_list.dart';
+import 'package:secret_note/widgets/note_list.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -19,27 +19,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Your Note"),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(5),
-        children: [
-          NoteList(
-            title: "Note 1",
-            content: "Lorem Ipsum Sit Amet Dolor",
-          ),
-          NoteList(
-            title: "Note 2",
-            content: "Lorem Ipsum Sit Amet Dolor",
-          ),
-          NoteList(
-            title: "Note 3",
-            content: "Lorem Ipsum Sit Amet Dolor",
-          ),
-          NoteList(
-            title: "Note 4",
-            content: "Lorem Ipsum Sit Amet Dolor",
-          ),
-        ],
-      ),
+      body: NoteList(),
       floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => NewNote())),
